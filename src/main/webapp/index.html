@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Form</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        form{
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        input[type=number],
+        select,
+        textarea{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type=radio],
+        input[type=checkbox]{
+            margin-right: 5px;
+        }
+
+        input[type=submit]{
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover{
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Create Your Profile</h2>
+
+<form action="register" method="post">
+
+    <label>Full Name:</label><br>
+    <input type="text" name="name"><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email"><br><br>
+
+    <label>Phone Number:</label><br>
+    <input type="tel" name="phone"><br><br>
+
+    <label>Age:</label><br>
+    <input type="number" name="age"><br><br>
+
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female<br><br>
+
+    <label>Skills:</label><br>
+    <input type="checkbox" name="skills" value="Java"> Java
+<input type="checkbox" name="skills" value="HTML"> HTML
+<input type="checkbox" name="skills" value="SQL"> SQL<br><br>
+
+    <label>City:</label><br>
+    <select name="city">
+        <option>Hyderabad</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+        <option>Mumbai</option>
+    </select><br><br>
+
+    
+
+    <input type="submit" value="Submit">
+
+</form>
+<h3 style="text-align:center;">View Stored Profiles</h3>
+<form action="viewProfiles" method="get" style="width:350px;margin:auto;margin-top:10px;">
+    <input type="submit" value="View Profiles">
+</form>
+ 
+
+<script>
+
+  const params = new URLSearchParams(window.location.search);
+  if(params.get("msg") === "success"){
+    alert("Profile Saved Successfully");
+}
+
+</script>
+</body>
+</html>
